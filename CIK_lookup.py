@@ -101,6 +101,32 @@ class SecEdgar:
                     'filing_date': filing_dates[i]
                 })
         return submissions if submissions else "Not Found"
+    
+    ## This function returns the 10-K filing for a given CIK and year 
+    def annual_filing(self, cik, year):
+        submissions = self.find_company_10Q_10K(cik)
+        if submissions == "Not Found":
+            return "Not Found"
+        ## Filter the submissions for 10-K forms for the specified year
+        form10k_with_year = []
+        for submission in submissions:
+            if submission['form'] == '10-K' and submission['filing_date'].startswith(str(year)):
+                form10k_with_year.append(submission)
+        if not form10k_with_year:
+            return "Not Found"
+        submission = form10k_with_year[0]  # Get the first 10-K filing for the specified year in case of any extras
+        accession_num = submission['accession_number'].replace('-', '')  # Remove dashes from accession number
+        primary_doc = submission['primary_document']  # Get the primary document name
+        # Create the url and access the filing text
+        url = f"https://www.sec.gov/Archives/edgar/data/{cik}/{accession_num}/{primary_doc}"
+        headers = {'user-agent': 'MLT GR greyes2@nd.edu'}
+        req = requests.get(url, headers=headers)
+        self.textfile = req.text if req.status_code == 200 else None
+        if self.textfile is None:
+            return "Not Found"
+        return self.textfile  # Return the text of the 10-K filing
+    
+
 
 
 # Example usage of the SecEdgar class   
@@ -111,9 +137,5 @@ print(req.name_to_cik("Apple Inc."))
 print(req.name_to_cik("Fake company"))  # Should return "Not Found"
 print(req.ticker_to_cik("LSHGF")) 
 result = req.name_to_cik("Apple Inc.")
-if result != "Not Found":
-    cik = result[0]  # extract raw cik
-    submissions = req.find_company_10Q_10K(cik)
-    print(submissions)
-else:
-    print("Company not found")
+# Test for annual_filing function
+print(req.annual_filing(320193,2024)) 
