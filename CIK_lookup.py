@@ -82,7 +82,7 @@ class SecEdgar:
         if recent is None:
             return "Not Found"
         
-        ## get accesion #, primary docs, and primary doc descriptions from the recent filings
+        ## get neccessary data from the recent filings
         accession_numbers = recent.get('accessionNumber', [])
         primary_docs = recent.get('primaryDocument', [])
         primary_doc_descriptions = recent.get('primaryDocDescription', [])
@@ -124,18 +124,67 @@ class SecEdgar:
         self.textfile = req.text if req.status_code == 200 else None
         if self.textfile is None:
             return "Not Found"
-        return self.textfile  # Return the text of the 10-K filing
+        return self.textfile # Return the text of the 10-k filing
+        
+    ## in my code, this function returns the quarter for a given filing date, every quarter is 3 months long with the first quarter starting in January
+    ## and the fourth quarter ending in December
+    def get_quarter(self,filing_date):
+        month = int(filing_date.split('-')[1])
+        if month < 1 or month > 12:
+            return "Invalid month"
+        if month in [1, 2, 3]:
+            return 1
+        elif month in [4, 5, 6]:
+            return 2
+        elif month in [7, 8, 9]:
+            return 3
+        elif month in [10, 11, 12]:
+            return 4    
+    ## This function returns the 10-Q filing. A quarter in my code is defined as a 3 month period, so the first quarter is January to March, the second quarter is April to June, the third quarter is July to September, and the fourth quarter is October to December
+    ## If there is no 10-Q filing for the specified year and quarter, then it returns the 10-k since its the missing quarter
+    def quarterly_filing(self, cik, year, quarter):
+        submissions = self.find_company_10Q_10K(cik)
+        if submissions == "Not Found":
+            return "Not Found"
+        ## Filter the submissions for 10-Q forms filed for the specified year
+        form10q_with_year = []
+        for submission in submissions:
+            if submission['form'] == '10-Q' and submission['filing_date'].startswith(str(year)):
+                if self.get_quarter(submission['filing_date']) == quarter:
+                    form10q_with_year.append(submission)
+        ## if there is no quarter found then it must be the 10-k as the missing quarter
+        if not form10q_with_year:
+            for submission in submissions:
+                if submission['form'] == '10-K' and submission['filing_date'].startswith(str(year)):
+                    if self.get_quarter(submission['filing_date']) == quarter:
+                        form10q_with_year.append(submission)
+        if not form10q_with_year:
+            return "Not Found"
+        submission = form10q_with_year[0]  # Get the first 10-Q filing for the specified year and quarter in case of any extras
+        accession_num = submission['accession_number'].replace('-', '')  # Remove dashes from accession number
+        primary_doc = submission['primary_document']  # Get the primary document name
+        # Create the url and access the filing text
+        url = f"https://www.sec.gov/Archives/edgar/data/{cik}/{accession_num}/{primary_doc}"
+        headers = {'user-agent': 'MLT GR greyes2@nd.edu'}
+        req = requests.get(url, headers=headers)
+        self.textfile = req.text if req.status_code == 200 else None
+        if self.textfile is None:
+            return "Not Found"
+        return self.textfile 
+        
+
+
+            
+            
     
 
 
 
 # Example usage of the SecEdgar class   
 req = SecEdgar("https://www.sec.gov/files/company_tickers.json")
-print(req.name_to_cik("Apple")) # Should return "Not Found"
-print(req.ticker_to_cik("AAPL"))
-print(req.name_to_cik("Apple Inc."))
-print(req.name_to_cik("Fake company"))  # Should return "Not Found"
-print(req.ticker_to_cik("LSHGF")) 
-result = req.name_to_cik("Apple Inc.")
-# Test for annual_filing function
-print(req.annual_filing(320193,2024)) 
+
+
+# Test for quarterly_filing function
+print(req.quarterly_filing(1045810, 2024, 1))  # Should return the text of the 10-Q filing for Apple Inc. for Q1 2024    
+print(req.quarterly_filing(1045810, 2024, 2))  # Should return the text of the 10-Q filing for Apple Inc. for Q2 2024
+
