@@ -1,4 +1,6 @@
 import requests
+from markdownify import markdownify as md
+
 
 class SecEdgar:
     def __init__(self,fileurl):
@@ -124,7 +126,7 @@ class SecEdgar:
         self.textfile = req.text if req.status_code == 200 else None
         if self.textfile is None:
             return "Not Found"
-        return self.textfile # Return the text of the 10-k filing
+        return md(self.textfile) # Return the text of the 10-k filing
         
     ## in my code, this function returns the quarter for a given filing date, every quarter is 3 months long with the first quarter starting in January
     ## and the fourth quarter ending in December
@@ -170,7 +172,8 @@ class SecEdgar:
         self.textfile = req.text if req.status_code == 200 else None
         if self.textfile is None:
             return "Not Found"
-        return self.textfile 
+        return md(self.textfile)
+    
         
 
 
@@ -185,6 +188,9 @@ req = SecEdgar("https://www.sec.gov/files/company_tickers.json")
 
 
 # Test for quarterly_filing function
-print(req.quarterly_filing(1045810, 2024, 1))  # Should return the text of the 10-Q filing for Apple Inc. for Q1 2024    
-print(req.quarterly_filing(1045810, 2024, 2))  # Should return the text of the 10-Q filing for Apple Inc. for Q2 2024
+#print(req.quarterly_filing(1045810, 2024, 1))   
+print(req.quarterly_filing(1045810, 2024, 2))
+
+
+
 
