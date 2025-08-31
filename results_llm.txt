@@ -1,0 +1,33 @@
+=== Bedrock MD&A Q&A Sat Aug 30 18:20:43 EDT 2025 ===
+
+Q1: According to the context, which areas drove the net sales increase and which areas declined in Q1 2024 vs Q1 2023?
+According to the context, in Q1 2024 vs Q1 2023:
+
+**Areas that drove the net sales increase:**
+- iPhone (higher net sales)
+- Services (higher net sales)
+
+**Areas that declined:**
+- iPad (lower net sales)
+- Wearables, Home and Accessories (lower net sales)
+
+Q2: Exactly how much did the company repurchase in common stock this quarter, and how much did it pay in dividends and dividend equivalents?
+Based on the provided context, in Q1 2024:
+
+- The company repurchased $20.5 billion of common stock
+- The company paid $3.8 billion in dividends and dividend equivalents
+
+Q3: List the specific Mac products the company announced during the quarter.
+Based on the provided context, Apple announced the following specific Mac products during Q1 2024:
+
+- Updated MacBook Pro 14-inch
+- Updated MacBook Pro 16-inch  
+- Updated iMac
+
+Q4: How many weeks were in Q1 2024 vs Q1 2023 according to the fiscal calendar note?
+According to the fiscal calendar note in the context:
+
+- Q1 2024 had 13 weeks
+- Q1 2023 had 14 weeks
+
+The context explains that FY2024 spans 52 weeks while FY2023 spanned 53 weeks, with the extra week occurring in Q1 2023.

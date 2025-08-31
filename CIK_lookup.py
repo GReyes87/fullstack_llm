@@ -184,12 +184,13 @@ class SecEdgar:
 
 
 # Example usage of the SecEdgar class   
-req = SecEdgar("https://www.sec.gov/files/company_tickers.json")
+#req = SecEdgar("https://www.sec.gov/files/company_tickers.json")
 
 
 # Test for quarterly_filing function
 #print(req.quarterly_filing(1045810, 2024, 1))   
-print(req.quarterly_filing(1045810, 2024, 2))
+#print(req.annual_filing(1045810, 2026))  # Example CIK and year for annual filing
+
 
 
 

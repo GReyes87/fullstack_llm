@@ -1,0 +1,43 @@
+=== Bedrock Q&A with full 10-Q Sat Aug 30 19:42:35 EDT 2025 ===
+Q1: Which areas drove net sales up vs down in Q1 2024?
+Based on the provided context, here are the areas that drove net sales up vs down in Q1 2024 compared to Q1 2023:
+
+**Areas that drove net sales UP:**
+- **iPhone**: Increased 6% or $3.9 billion (from $65.8B to $69.7B)
+- **Services**: Increased 11% or $2.4 billion (from $20.8B to $23.1B)
+- **Mac**: Increased 1% or $45 million (from $7.7B to $7.8B) - relatively flat
+
+**Areas that drove net sales DOWN:**
+- **iPad**: Decreased 25% or $2.4 billion (from $9.4B to $7.0B)
+- **Wearables, Home and Accessories**: Decreased 11% or $1.5 billion (from $13.5B to $12.0B)
+
+**Geographic breakdown:**
+- **UP**: Americas (+2%), Europe (+10%), Japan (+15%), Rest of Asia Pacific (+7%)
+- **DOWN**: Greater China (-13%)
+
+The document notes that iPhone growth was driven primarily by higher net sales of Pro models, while Services growth came from advertising, video and cloud services. The iPad decline was attributed to lower sales of iPad Pro, iPad 9th generation and iPad Air, while Wearables decline was due to lower sales of Wearables and Accessories.
+
+Q2: Exactly how much did the company repurchase in common stock this quarter, and how much did it pay in dividends and dividend equivalents?
+Based on the provided context, for the three months ended December 30, 2023:
+
+**Common Stock Repurchases:**
+- The Company repurchased 118 million shares of its common stock for $20.5 billion
+
+**Dividends and Dividend Equivalents:**
+- The Company paid dividends and dividend equivalents of $3.8 billion
+
+This information is found in the "Quarterly Highlights" section and is also detailed in the Condensed Consolidated Statements of Cash Flows, which shows "Repurchases of common stock" of $(20,139) million and "Payments for dividends and dividend equivalents" of $(3,825) million.
+
+Q3: List the specific Mac products the company announced during the quarter.
+Based on the provided context, during the first quarter of 2024, Apple announced the following specific Mac products:
+
+- MacBook Pro® 14-in. (updated)
+- MacBook Pro 16-in. (updated) 
+- iMac® (updated)
+
+The document states: "During the first quarter of 2024, the Company announced an updated MacBook Pro® 14-in., MacBook Pro 16-in. and iMac®."
+
+Q4: How many weeks were in Q1 2024 vs Q1 2023 according to the fiscal calendar note?
+According to the context, Q1 2024 included 13 weeks, compared to 14 weeks during Q1 2023.
+
+The document explains that "The Company's fiscal year is the 52- or 53-week period that ends on the last Saturday of September. An additional week is included in the first fiscal quarter every five or six years to realign the Company's fiscal quarters with calendar quarters, which occurred in the first fiscal quarter of 2023. The Company's fiscal years 2024 and 2023 span 52 and 53 weeks, respectively."

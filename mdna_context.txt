@@ -1,0 +1,17 @@
+Company: Apple Inc.
+Filing: Form 10-Q — Fiscal Q1 2024 (13 weeks; prior-year Q1 had 14 weeks)
+Fiscal year notes: FY2024 spans 52 weeks; FY2023 spanned 53 weeks (extra week occurred in Q1 2023).
+
+Business seasonality & product introductions
+- Q1 typically has higher net sales due to seasonal holiday demand.
+- New product and service launches can materially affect net sales, cost of sales, operating expenses, and channel inventory (older products decline ahead of new launches; channels are refilled post-launch).
+
+Quarterly highlights (Q1 2024 vs Q1 2023)
+- Total net sales increased 2% (≈ $2.4 billion).
+- Drivers: higher net sales of iPhone and Services.
+- Offsets: lower net sales of iPad and Wearables, Home and Accessories.
+- Product announcements: updated MacBook Pro 14-inch, MacBook Pro 16-inch, and iMac.
+- Capital returns: repurchased $20.5 billion of common stock; paid $3.8 billion in dividends and dividend equivalents.
+
+Macroeconomic conditions
+- Inflation, interest rate changes, and currency fluctuations have directly and indirectly impacted results and could materially impact future results.
